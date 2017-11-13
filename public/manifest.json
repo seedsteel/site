@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Seedsteel Template",
+  "name": "Template Builder for Seedsteel Seedword Storage",
   "icons": [
     {
       "src": "favicon.ico",
