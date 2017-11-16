@@ -30,12 +30,12 @@ class SeedsteelTemplate extends Component {
                 <Grid>
                     <Row>
                         <Col md={1} />
-                        <Col md={4} >
+                        <Col md={3} >
                             <SeedsteelInputs onValidWordlist={this.onValidWordlist}
                                              />
                         </Col>
-                        <Col md={2} />
-                        <Col md={4} >
+                        <Col md={1} />
+                        <Col md={6} >
                             <SeedsteelSvg validWords={this.state.validWords}
                                           />
                         </Col>
