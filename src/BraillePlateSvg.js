@@ -17,12 +17,6 @@ class BraillePlateSvg extends Component {
 
     render() {
         return (
-            <div>
-            <Button 
-                bsStyle="info" 
-                onClick={this.saveit}
-                >Save</Button>
-
             <svg 
                 id="theletters"
                 height={"11in"} 
@@ -33,18 +27,17 @@ class BraillePlateSvg extends Component {
                 <circle cx={"0in"} cy={"0in"} r={"0.1in"} fill="red" />
                 <SeedsteelPlate
                     x={0.5}
-                    y={0.5}
+                    y={0.25}
                     seedWords={this.props.seedWords}
                     plateIndex={0}
                     />
                 <SeedsteelPlate 
                     x={2.5}
-                    y={0.5}
+                    y={0.25}
                     seedWords={this.props.seedWords}
                     plateIndex={1}
                     />
             </svg>
-            </div>
         );
     }
 }

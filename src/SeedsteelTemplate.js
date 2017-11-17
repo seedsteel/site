@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Grid, Row, Col} from 'react-bootstrap';
 import SeedsteelInputs from './SeedsteelInputs';
 import BraillePlateSvg from './BraillePlateSvg';
+import SaveButton from './SaveButton';
 
 class SeedsteelTemplate extends Component {
 
@@ -32,6 +33,7 @@ class SeedsteelTemplate extends Component {
                             <SeedsteelInputs
                                 updateWordlist={this.updateWordlist}
                                 />
+                                <SaveButton />
                         </Col>
                         <Col md={1} />
                         <Col md={5} >
