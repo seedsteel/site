@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import SeedsteelPlate from './SeedsteelPlate';
 import {saveAs} from 'file-saver';
 
@@ -6,7 +7,7 @@ import {saveAs} from 'file-saver';
 import { Button } from 'react-bootstrap';
 
 
-class SeedsteelSvg extends Component {
+class SeedsteelSvg2 extends Component {
 
     constructor(props) {
         super(props);
@@ -28,7 +29,7 @@ class SeedsteelSvg extends Component {
 
     render() {
 
-        // let p = ReactHtmlParser(seedsteel_letters);
+        // let p = ReactHtmlParser(seedshield_letters);
         // return p;
 
         // const marker = "replaceme";
@@ -41,35 +42,17 @@ class SeedsteelSvg extends Component {
 
         // let t = seedsteel_letters_front + middle + seedsteel_letters_end;
 
-        return (
-            <div>
-                <Button 
-                    bsStyle="info" 
-                    onClick={this.saveit}
-                    >
-                    Save
-                </Button>
+        let j = (<SeedsteelPlate x={0.5} y={0.5}/>);
 
-            <div id="theletters" dangerouslySetInnerHTML={{ __html: seedsteel_letters }} />
-            </div>
-          );
-        // return "fill:none;fill-opacity:0.31372549;stroke:#000000;stroke-width:0.21908905;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1";
-        return {seedsteel_letters};
-        return (
-            <svg height={"11in"} width={"8.5in"}>
-                <circle cx={"0in"} cy={"0in"} r={"0.1in"} fill="red" />
-                <SeedsteelPlate x={0.5} y={0.5}/>
-                <SeedsteelPlate x={2.5} y={0.5}/>
-            </svg>
-        );
+        return j;
+
+        // let domNode = document.getElementById("replaceme");
+
+        // return ReactDOM.createPortal(
+        //     <SeedsteelPlate x={0.5} y={0.5}/>,
+        //     domNode,
+        //   );
     }
 }
 
-// $("#btn-save").click( function() {
-//     var text = $("#textarea").val();
-//     var filename = $("#input-fileName").val()
-//     var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-//     saveAs(blob, filename+".txt");
-//   });
-
-export default SeedsteelSvg;
+export default SeedsteelSvg2;

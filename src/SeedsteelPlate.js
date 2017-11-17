@@ -24,7 +24,9 @@ class SeedsteelPlate extends Component {
         const offsetY = this.props.y;
 
         return (
-            <g>
+            <g 
+            // transform="scale(0.25)"
+                >
                 <rect
                     height={rectHeight + "in"} 
                     width={rectWidth + "in"}

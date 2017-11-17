@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import {FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap';
 import {Grid, Row, Col} from 'react-bootstrap';
 import SeedsteelInputs from './SeedsteelInputs';
-import SeedsteelSvg from './SeedsteelSvg';
+// import SeedsteelSvg from './SeedsteelSvg';
+// import SeedsteelSvg2 from './SeedsteelSvg2';
+import NewSvg from './NewSvg';
 
 class SeedsteelTemplate extends Component {
 
@@ -31,13 +33,21 @@ class SeedsteelTemplate extends Component {
                     <Row>
                         <Col md={1} />
                         <Col md={3} >
-                            <SeedsteelInputs onValidWordlist={this.onValidWordlist}
-                                             />
+                            <SeedsteelInputs
+                                onValidWordlist={this.onValidWordlist}
+                                />
                         </Col>
                         <Col md={1} />
                         <Col md={6} >
-                            <SeedsteelSvg validWords={this.state.validWords}
-                                          />
+                            <NewSvg />
+                            {/* <SeedsteelSvg 
+                                validWords={this.state.validWords}
+                                /> */}
+                                {/* <svg>
+                            <SeedsteelSvg2 
+                                validWords={this.state.validWords}
+                                />
+                                </svg> */}
                         </Col>
                         <Col md={1} />
                     </Row>
