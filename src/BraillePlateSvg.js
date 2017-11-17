@@ -2,22 +2,10 @@ import React, { Component } from 'react';
 import SeedsteelPlate from './SeedsteelPlate';
 import {saveAs} from 'file-saver';
 
-// import {seedsteel_letters} from './seedsteel_letters';
 import { Button } from 'react-bootstrap';
 
 
-class NewSvg extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            seedWords: 'seed words'
-        };
-    }
-
-    componentWillReceiveProps({validWords}) {
-        this.setState({seedWords: validWords});
-    }
+class BraillePlateSvg extends Component {
 
     saveit() {
         var svgContents = document.getElementById('theletters').outerHTML;
@@ -46,12 +34,14 @@ class NewSvg extends Component {
                 <SeedsteelPlate
                     x={0.5}
                     y={0.5}
-                    seedWords={this.state.seedWords}
+                    seedWords={this.props.seedWords}
+                    plateIndex={0}
                     />
                 <SeedsteelPlate 
                     x={2.5}
                     y={0.5}
-                    seedWords={this.state.seedWords}
+                    seedWords={this.props.seedWords}
+                    plateIndex={1}
                     />
             </svg>
             </div>
@@ -59,4 +49,4 @@ class NewSvg extends Component {
     }
 }
 
-export default NewSvg;
+export default BraillePlateSvg;

@@ -7,13 +7,8 @@ class AutofillOptions extends Component {
 
     constructor(props) {
         super(props);
-        // this.state = {
-        //     value: '',
-        //     seedWords: []
-        // };
 
         this.wordSelected = this.wordSelected.bind(this);
-        // console.log(props.index);
     }
 
     getPrefixMatchingWords = (prefix) => {
@@ -26,7 +21,7 @@ class AutofillOptions extends Component {
 
     showOptions = (prefix) => {
         let prefixMatchingWords = this.getPrefixMatchingWords(prefix);
-        if (prefixMatchingWords.length == 1 && prefix.toLowerCase() === prefixMatchingWords[0]) {
+        if (prefixMatchingWords.length === 1 && prefix.toLowerCase() === prefixMatchingWords[0]) {
             return '';
         }
 

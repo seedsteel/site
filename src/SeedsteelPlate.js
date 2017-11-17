@@ -1,27 +1,35 @@
 import React, { Component } from 'react';
 import SeedsteelWordRow, {wordRowHeight} from './SeedsteelWordRow';
 
-const mmPerInch = 25.4;
 const rectHeight = 6;
 const rectWidth = 2;
 
-const pageYOffset = 0.5
 const firstWordRowHeightOffset = 0.75;
 
 const cornerCircleEdgeDistance = 0.25;
 const cornerCircleRadius = 0.125;
 
 const outerEdgeStyle = {stroke: '#000000', fill: 'none', strokeWidth:1.21908905}
-//fill:none;fill-opacity:0.31372549;stroke:#000000;stroke-width:0.25399998;stroke-miterlimit:4;stroke-dasharray:0.25399998, 0.76199994;stroke-dashoffset:0;stroke-opacity:1
 
 class SeedsteelPlate extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         const offsetX = this.props.x;
         const offsetY = this.props.y;
+
+        const word1Index = (this.props.plateIndex * 6) + 0;
+        const word2Index = (this.props.plateIndex * 6) + 1;
+        const word3Index = (this.props.plateIndex * 6) + 2;
+        const word4Index = (this.props.plateIndex * 6) + 3;
+        const word5Index = (this.props.plateIndex * 6) + 4;
+        const word6Index = (this.props.plateIndex * 6) + 5;
+
+        const word1 = this.props.seedWords[word1Index];
+        const word2 = this.props.seedWords[word2Index];
+        const word3 = this.props.seedWords[word3Index];
+        const word4 = this.props.seedWords[word4Index];
+        const word5 = this.props.seedWords[word5Index];
+        const word6 = this.props.seedWords[word6Index];
 
         return (
             <g 
@@ -105,26 +113,32 @@ class SeedsteelPlate extends Component {
                 <SeedsteelWordRow 
                     x={offsetX}
                     y={offsetY + firstWordRowHeightOffset}
+                    word={word1}
                     />
                 <SeedsteelWordRow 
                     x={offsetX}
                     y={offsetY + firstWordRowHeightOffset + (wordRowHeight * 1)}
+                    word={word2}
                     />
                 <SeedsteelWordRow 
                     x={offsetX}
                     y={offsetY + firstWordRowHeightOffset + (wordRowHeight * 2)}
+                    word={word3}
                     />
                 <SeedsteelWordRow 
                     x={offsetX}
                     y={offsetY + firstWordRowHeightOffset + (wordRowHeight * 3)}
+                    word={word4}
                     />
                 <SeedsteelWordRow 
                     x={offsetX}
                     y={offsetY + firstWordRowHeightOffset + (wordRowHeight * 4)}
+                    word={word5}
                     />
                 <SeedsteelWordRow 
                     x={offsetX}
                     y={offsetY + firstWordRowHeightOffset + (wordRowHeight * 5)}
+                    word={word6}
                     />
             </g>
         );

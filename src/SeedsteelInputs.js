@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import {FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap';
 import WordInput from './WordInput';
-import { get12WordList, getBip0039Words } from './wordutils';
+import { get12WordList } from './wordutils';
 
 class SeedsteelInputs extends Component {
 
@@ -29,7 +28,6 @@ class SeedsteelInputs extends Component {
     }
 
     handleWordChange(index, word) {
-        console.log(index + ": " + word);
         this.props.onValidWordlist(["a", "b", "c"]);
     }
 
@@ -40,15 +38,11 @@ class SeedsteelInputs extends Component {
                     {get12WordList().map((i) => 
                         <WordInput 
                             index={i}
+                            key={i}
                             onWordChange={this.handleWordChange}
                         />
                     )}
                 </form>
-                {/* <ul>
-                    {getBip0039Words().map(function(w) {
-                        return <li>{w}</li>;
-                    })}
-                </ul> */}
             </div>
         );
     }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {Grid, Row, Col} from 'react-bootstrap';
-import {FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap';
+import {FormGroup, ControlLabel, FormControl} from 'react-bootstrap';
 import AutofillOptions from './AutofillOptions';
 import { getBip0039Words } from './wordutils';
 
@@ -15,7 +14,6 @@ class WordInput extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.wordSelected = this.wordSelected.bind(this);
-        console.log(props.index);
     }
     
     getValidationState() {
@@ -25,11 +23,6 @@ class WordInput extends Component {
             return 'success';
         }
         return 'error';
-        // const length = this.state.value.length;
-        // if (length > 10) return 'success';
-        // else if (length > 5) return 'warning';
-        // else if (length > 0) return 'error';
-        // return null;
     }
 
     handleChange(e) {

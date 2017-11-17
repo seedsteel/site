@@ -1,29 +1,22 @@
 import React, { Component } from 'react';
-import {FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap';
 import {Grid, Row, Col} from 'react-bootstrap';
 import SeedsteelInputs from './SeedsteelInputs';
-// import SeedsteelSvg from './SeedsteelSvg';
-// import SeedsteelSvg2 from './SeedsteelSvg2';
-import NewSvg from './NewSvg';
+import BraillePlateSvg from './BraillePlateSvg';
 
 class SeedsteelTemplate extends Component {
-
-    // constructor() {
-    //     super();
-    //     this.state = {value: ''};
-    // }
 
     constructor(props) {
         super(props);
         this.state = {
-            value: '',
+            seedWords: ["alph", "brav", "char", "delt", "echo", "foxt",
+                        "golf", "hote", "indi", "juli", "kilo", "lima"]
         };
 
         this.onValidWordlist = this.onValidWordlist.bind(this);
     }
     
     onValidWordlist(validWords) {
-        this.setState({validWords: validWords});
+        // this.setState({validWords: validWords});
     }
 
     render() {
@@ -39,15 +32,9 @@ class SeedsteelTemplate extends Component {
                         </Col>
                         <Col md={1} />
                         <Col md={6} >
-                            <NewSvg />
-                            {/* <SeedsteelSvg 
-                                validWords={this.state.validWords}
-                                /> */}
-                                {/* <svg>
-                            <SeedsteelSvg2 
-                                validWords={this.state.validWords}
+                            <BraillePlateSvg 
+                                seedWords={this.state.seedWords}
                                 />
-                                </svg> */}
                         </Col>
                         <Col md={1} />
                     </Row>
