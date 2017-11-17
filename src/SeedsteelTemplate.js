@@ -8,15 +8,18 @@ class SeedsteelTemplate extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            seedWords: ["alph", "brav", "char", "delt", "echo", "foxt",
-                        "golf", "hote", "indi", "juli", "kilo", "lima"]
-        };
+            // seedWords: ["alph", "brav", "char", "delt", "echo", "foxt",
+            //             "golf", "hote", "indi", "juli", "kilo", "lima"]
+            seedWords: ["", "", "", "", "", "", "", "", "", "", "", ""]
+};
 
-        this.onValidWordlist = this.onValidWordlist.bind(this);
+        this.updateWordlist = this.updateWordlist.bind(this);
     }
     
-    onValidWordlist(validWords) {
-        // this.setState({validWords: validWords});
+    updateWordlist(index, word) {
+        let newSeedWords = this.state.seedWords;
+        newSeedWords[index] = word;
+        this.setState({seedWords: newSeedWords});
     }
 
     render() {
@@ -25,18 +28,17 @@ class SeedsteelTemplate extends Component {
                 <Grid>
                     <Row>
                         <Col md={1} />
-                        <Col md={3} >
+                        <Col md={5} >
                             <SeedsteelInputs
-                                onValidWordlist={this.onValidWordlist}
+                                updateWordlist={this.updateWordlist}
                                 />
                         </Col>
                         <Col md={1} />
-                        <Col md={6} >
+                        <Col md={5} >
                             <BraillePlateSvg 
                                 seedWords={this.state.seedWords}
                                 />
                         </Col>
-                        <Col md={1} />
                     </Row>
                 </Grid>
             </div>

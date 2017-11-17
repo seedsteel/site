@@ -8,30 +8,36 @@ class WordInput extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: '',
-            seedWords: []
+            word: ""
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.wordSelected = this.wordSelected.bind(this);
     }
+
+    isWordValid(inputWord) {
+        const wordlist = getBip0039Words();
+        return (wordlist.indexOf(inputWord) > -1);
+    }
     
     getValidationState() {
-        const wordlist = getBip0039Words();
-        const inputWord = this.state.value;
-        if (wordlist.indexOf(inputWord) > -1) {
+        const inputWord = this.state.word;
+        if (this.isWordValid(inputWord)) {
             return 'success';
         }
         return 'error';
     }
 
     handleChange(e) {
-        this.setState({ value: e.target.value });
-        this.props.onWordChange(this.props.index, e.target.value);
+        this.setState({ word: e.target.value });
+        const isValid = this.isWordValid(e.target.value);
+        this.props.onWordChange(this.props.index, e.target.value, isValid);
     }
 
     wordSelected(word) {
-        this.setState({value: word});
+        const isValid = this.isWordValid(word);
+        this.props.onWordChange(this.props.index, word, isValid);
+        this.setState({word: word});
     }
 
     render() {
@@ -43,40 +49,16 @@ class WordInput extends Component {
                 <ControlLabel>Word {this.props.index}</ControlLabel>
                 <FormControl
                     type="text"
-                    value={this.state.value}
+                    value={this.state.word}
                     placeholder="Enter text"
                     onChange={this.handleChange}
                 />
                 <FormControl.Feedback />
                 <AutofillOptions
-                    prefix={this.state.value}
+                    prefix={this.state.word}
                     wordSelected={this.wordSelected}
                 />
-                {/* <HelpBlock>Validation is based on string length.</HelpBlock> */}
             </FormGroup>
-
-            // <Row>
-            //     <FormGroup
-            //         controlId="formBasicText"
-            //         validationState={this.getValidationState()}
-            //         >
-            //         <Col md={3}>
-            //             <ControlLabel>Word {this.props.index}</ControlLabel>
-            //         </Col>
-            //         <Col md={6}>
-            //             <FormControl
-            //                 type="text"
-            //                 value={this.state.value}
-            //                 placeholder="Enter text"
-            //                 onChange={this.handleChange}
-            //             />
-            //             <FormControl.Feedback />
-            //         </Col>
-            //         <Col md={3}>
-            //             <HelpBlock>Validation is based on string length.</HelpBlock>
-            //         </Col>
-            //     </FormGroup>
-            // </Row>
         );
     }
 }

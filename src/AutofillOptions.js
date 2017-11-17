@@ -17,12 +17,12 @@ class AutofillOptions extends Component {
         return matchingWords;
     }
 
-    showNothing = () => '';
+    showNothing = () => "";
 
     showOptions = (prefix) => {
         let prefixMatchingWords = this.getPrefixMatchingWords(prefix);
         if (prefixMatchingWords.length === 1 && prefix.toLowerCase() === prefixMatchingWords[0]) {
-            return '';
+            return "";
         }
 
         return (
