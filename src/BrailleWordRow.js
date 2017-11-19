@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SeedsteelWordLetter from './SeedsteelWordLetter';
+import BrailleWordLetter from './BrailleWordLetter';
 
 export const wordRowHeight = 0.75;
 const wordRowWidth = 2;
@@ -9,7 +9,7 @@ const outerEdgeStyle = {stroke: '#000000', fill: 'none', strokeWidth:0.21908905}
 const letterXOffset = 0.5;
 
 
-class SeedsteelWordRow extends Component {
+class BrailleWordRow extends Component {
 
     render() {
         const offsetX = this.props.x;
@@ -30,22 +30,22 @@ class SeedsteelWordRow extends Component {
                     y={offsetY + "in"}
                     />
                 
-                <SeedsteelWordLetter
+                <BrailleWordLetter
                     x={offsetX}
                     y={offsetY}
                     letter={letter1}
                     />
-                <SeedsteelWordLetter
+                <BrailleWordLetter
                     x={offsetX + letterXOffset}
                     y={offsetY}
                     letter={letter2}
                     />
-                <SeedsteelWordLetter
+                <BrailleWordLetter
                     x={offsetX + (letterXOffset * 2)}
                     y={offsetY}
                     letter={letter3}
                     />
-                <SeedsteelWordLetter
+                <BrailleWordLetter
                     x={offsetX + (letterXOffset * 3)}
                     y={offsetY}
                     letter={letter4}
@@ -56,4 +56,4 @@ class SeedsteelWordRow extends Component {
 }
 
 
-export default SeedsteelWordRow;
+export default BrailleWordRow;

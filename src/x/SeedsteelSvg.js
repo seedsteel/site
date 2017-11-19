@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import SeedsteelPlate from './SeedsteelPlate';
 import {saveAs} from 'file-saver';
 
-// import {seedsteel_letters} from './seedsteel_letters';
 import { Button } from 'react-bootstrap';
 
 

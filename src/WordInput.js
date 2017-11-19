@@ -46,7 +46,7 @@ class WordInput extends Component {
                 controlId="formBasicText"
                 validationState={this.getValidationState()}
                 >
-                <ControlLabel>Word {this.props.index}</ControlLabel>
+                <ControlLabel>Word {this.props.index + 1}</ControlLabel>
                 <FormControl
                     type="text"
                     value={this.state.word}

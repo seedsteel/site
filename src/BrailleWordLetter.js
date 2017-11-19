@@ -35,7 +35,7 @@ const getLetterGridCircle = (letter, offsetX, offsetY, gridX, gridY) => {
     );
 }
 
-class SeedsteelWordLetter extends Component {
+class BrailleWordLetter extends Component {
 
     render() {
         const offsetX = this.props.x;
@@ -56,4 +56,4 @@ class SeedsteelWordLetter extends Component {
 }
 
 
-export default SeedsteelWordLetter;
+export default BrailleWordLetter;

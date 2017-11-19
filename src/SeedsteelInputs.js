@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import {Grid, Row, Col} from 'react-bootstrap';
+import {Row, Col} from 'react-bootstrap';
 import WordInput from './WordInput';
-import { get12WordList } from './wordutils';
 
 class SeedsteelInputs extends Component {
 
@@ -24,6 +23,11 @@ class SeedsteelInputs extends Component {
             <form>
                 <Row>
                     <Col md={6}>
+                        <WordInput 
+                            index={0}
+                            key={0}
+                            onWordChange={this.handleWordChange}
+                        />
                         <WordInput 
                             index={1}
                             key={1}
@@ -49,13 +53,13 @@ class SeedsteelInputs extends Component {
                             key={5}
                             onWordChange={this.handleWordChange}
                         />
-                        <WordInput 
-                            index={6}
-                            key={6}
-                            onWordChange={this.handleWordChange}
-                        />
                     </Col>
                     <Col md={6}>
+                        <WordInput 
+                                index={6}
+                                key={6}
+                                onWordChange={this.handleWordChange}
+                            />
                         <WordInput 
                             index={7}
                             key={7}
@@ -81,21 +85,8 @@ class SeedsteelInputs extends Component {
                             key={11}
                             onWordChange={this.handleWordChange}
                         />
-                        <WordInput 
-                            index={12}
-                            key={12}
-                            onWordChange={this.handleWordChange}
-                        />
                     </Col>
                 </Row>
-
-                {/* {get12WordList().map((i) => 
-                    <WordInput 
-                        index={i}
-                        key={i}
-                        onWordChange={this.handleWordChange}
-                    />
-                )} */}
             </form>
         );
     }
