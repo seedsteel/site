@@ -5,18 +5,21 @@ import BraillePlatesSvg from './BraillePlatesSvg';
 import ScoreboardPlatesSvg from './ScoreboardPlatesSvg';
 import SaveButton from './SaveButton';
 import SvgRenderControl from './SvgRenderControl';
+import WordCountControl from './WordCountControl';
 
 class SeedsteelTemplate extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
+            wordCount: 12,
             seedWords: ["", "", "", "", "", "", "", "", "", "", "", ""],
             renderType: "scoreboard"
         };
 
         this.updateWordlist = this.updateWordlist.bind(this);
         this.setRenderType = this.setRenderType.bind(this);
+        this.setWordCount = this.setWordCount.bind(this);
     }
     
     updateWordlist(index, word) {
@@ -42,42 +45,46 @@ class SeedsteelTemplate extends Component {
         this.setState({renderType: renderType})
     }
 
+    setWordCount(wordCount) {
+        console.log("SETTING WORD COUNT: " + wordCount)
+        this.setState({wordCount: wordCount})
+    }
+
     render() {
         return (
             <div>
                 <Grid>
                     <Row>
                         <Col md={1} />
-                        <Col md={5} >
+                        <Col md={6} >
+                            <Row>
+                                <Col md={6} >
+                                    <WordCountControl
+                                        wordCount={this.state.wordCount}
+                                        setWordCount={this.setWordCount}
+                                        />
+                                </Col>
+                                <Col md={6} >
+                                    <SvgRenderControl
+                                        renderType={this.state.renderType}
+                                        setRenderType={this.setRenderType}
+                                        />
+                                </Col>
+                            </Row>
+                            <br />
+                            <Row>
+                                <Col md={12} >
+                                    <SaveButton />
+                                </Col>
+                            </Row>
+                            <br />
+                            <br />
                             <SeedsteelInputs
                                 updateWordlist={this.updateWordlist}
                                 />
-                            <br />
-                            <br />
-                            <SvgRenderControl
-                                renderType={this.state.renderType}
-                                setRenderType={this.setRenderType}
-                                />
-
-                        </Col>
-                        <Col md={1} >
-                            <br />
-                            <br />
-                            <br />
-                            <SaveButton />
-                            {/* <SvgRenderControl
-                                renderType={this.state.renderType}
-                                setRenderType={this.setRenderType}
-                                /> */}
                         </Col>
                         <Col md={5} >
                             {this.getSvgForRenderType(this.state.renderType, this.state.seedWords)}}
-                            {/* <ScoreboardPlatesSvg 
-                                seedWords={this.state.seedWords}
-                                /> */}
-                            {/* <BraillePlatesSvg 
-                                seedWords={this.state.seedWords}
-                                /> */}
                         </Col>
                     </Row>
                 </Grid>

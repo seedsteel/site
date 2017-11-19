@@ -18,6 +18,7 @@ class SaveButton extends Component {
             <Button 
                 bsStyle="info" 
                 onClick={this.saveit}
+                block
                 >Save</Button>
         )
     }

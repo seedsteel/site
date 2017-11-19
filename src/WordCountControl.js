@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { ButtonToolbar, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 
 
-class SvgRenderControl extends Component {
+class WordCountControl extends Component {
     
     constructor(props) {
         super(props);
@@ -10,8 +10,8 @@ class SvgRenderControl extends Component {
         this.onChange = this.onChange.bind(this);
     }
 
-    onChange(renderType) {
-        this.props.setRenderType(renderType);
+    onChange(wordCount) {
+        this.props.setWordCount(wordCount);
     }
 
     render() {
@@ -19,15 +19,15 @@ class SvgRenderControl extends Component {
             <ButtonToolbar>
                 <ToggleButtonGroup 
                     type="radio"
-                    name="encoding"
-                    value={this.props.renderType}
+                    name="wordCount"
+                    value={this.props.wordCount}
                     onChange={this.onChange}
                     >
-                    <ToggleButton value="scoreboard">
-                        Letter Template
+                    <ToggleButton value={12}>
+                        12 Seed Words
                     </ToggleButton>
-                    <ToggleButton value="braille">
-                        Braille Template
+                    <ToggleButton value={24}>
+                        24 Seed Words
                     </ToggleButton>
                 </ToggleButtonGroup>
             </ButtonToolbar>
@@ -35,4 +35,4 @@ class SvgRenderControl extends Component {
     }
 }
 
-export default SvgRenderControl;
+export default WordCountControl;
