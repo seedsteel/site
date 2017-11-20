@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import {Grid, Row, Col} from 'react-bootstrap';
 import SeedsteelInputs from './SeedsteelInputs';
 import BraillePlatesSvg from './BraillePlatesSvg';
+import BraillePlates24Svg from './BraillePlates24Svg';
 import ScoreboardPlatesSvg from './ScoreboardPlatesSvg';
+import ScoreboardPlates24Svg from './ScoreboardPlates24Svg';
 import SaveButton from './SaveButton';
 import SvgRenderControl from './SvgRenderControl';
 import WordCountControl from './WordCountControl';
@@ -13,7 +15,8 @@ class SeedsteelTemplate extends Component {
         super(props);
         this.state = {
             wordCount: 12,
-            seedWords: ["", "", "", "", "", "", "", "", "", "", "", ""],
+            seedWords: ["", "", "", "", "", "", "", "", "", "", "", "",
+                        "", "", "", "", "", "", "", "", "", "", "", ""],
             renderType: "scoreboard"
         };
 
@@ -28,14 +31,24 @@ class SeedsteelTemplate extends Component {
         this.setState({seedWords: newSeedWords});
     }
 
-    getSvgForRenderType(renderType, seedwords) {
+    getSvgTemplate() {
         switch(this.state.renderType) {
             case "scoreboard":
-                return <ScoreboardPlatesSvg 
+                if (this.state.wordCount == 24) {
+                    return <ScoreboardPlates24Svg
+                                seedWords={this.state.seedWords}
+                                />
+                }
+                return <ScoreboardPlatesSvg
                             seedWords={this.state.seedWords}
                             />
             case "braille":
-                return <BraillePlatesSvg 
+                if (this.state.wordCount == 24) {
+                    return <BraillePlates24Svg
+                                seedWords={this.state.seedWords}
+                                />
+                }
+                return <BraillePlatesSvg
                             seedWords={this.state.seedWords}
                             />
         }
@@ -46,7 +59,6 @@ class SeedsteelTemplate extends Component {
     }
 
     setWordCount(wordCount) {
-        console.log("SETTING WORD COUNT: " + wordCount)
         this.setState({wordCount: wordCount})
     }
 
@@ -81,10 +93,11 @@ class SeedsteelTemplate extends Component {
                             <br />
                             <SeedsteelInputs
                                 updateWordlist={this.updateWordlist}
+                                wordCount={this.state.wordCount}
                                 />
                         </Col>
                         <Col md={5} >
-                            {this.getSvgForRenderType(this.state.renderType, this.state.seedWords)}}
+                            {this.getSvgTemplate()}
                         </Col>
                     </Row>
                 </Grid>

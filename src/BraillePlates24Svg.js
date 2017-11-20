@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import SeedsteelBraille from './SeedsteelBraille';
 
-class BraillePlatesSvg extends Component {
+class BraillePlates24Svg extends Component {
 
     render() {
         return (
             <svg 
                 id="theletters"
-                height={"11in"} 
-                width={"8.5in"}
+                height={"8.5in"} 
+                width={"11in"}
                 xmlns="http://www.w3.org/2000/svg"
                 >
                 <SeedsteelBraille
@@ -25,9 +25,23 @@ class BraillePlatesSvg extends Component {
                     seedWords={this.props.seedWords}
                     subkey={1}
                     />
+                <SeedsteelBraille
+                    x={4.25}
+                    y={0.25}
+                    plateIndex={2}
+                    seedWords={this.props.seedWords}
+                    subkey={2}
+                    />
+                <SeedsteelBraille
+                    x={6.25}
+                    y={0.25}
+                    plateIndex={3}
+                    seedWords={this.props.seedWords}
+                    subkey={3}
+                    />
             </svg>
         );
     }
 }
 
-export default BraillePlatesSvg;
+export default BraillePlates24Svg;

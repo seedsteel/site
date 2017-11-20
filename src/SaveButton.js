@@ -16,10 +16,12 @@ class SaveButton extends Component {
     render() {
         return (
             <Button 
-                bsStyle="info" 
+                bsStyle="success" 
                 onClick={this.saveit}
                 block
-                >Save</Button>
+                >
+                Save Template
+                </Button>
         )
     }
 }

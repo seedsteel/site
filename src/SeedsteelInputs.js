@@ -87,6 +87,75 @@ class SeedsteelInputs extends Component {
                         />
                     </Col>
                 </Row>
+                {this.props.wordCount != 24 ? null :
+                <Row>
+                    <br />
+                    <Col md={6}>
+                        <WordInput 
+                            index={12}
+                            key={12}
+                            onWordChange={this.handleWordChange}
+                        />
+                        <WordInput 
+                            index={13}
+                            key={13}
+                            onWordChange={this.handleWordChange}
+                        />
+                        <WordInput 
+                            index={14}
+                            key={14}
+                            onWordChange={this.handleWordChange}
+                        />
+                        <WordInput 
+                            index={15}
+                            key={15}
+                            onWordChange={this.handleWordChange}
+                        />
+                        <WordInput 
+                            index={16}
+                            key={16}
+                            onWordChange={this.handleWordChange}
+                        />
+                        <WordInput 
+                            index={17}
+                            key={17}
+                            onWordChange={this.handleWordChange}
+                        />
+                    </Col>
+                    <Col md={6}>
+                        <WordInput 
+                                index={18}
+                                key={18}
+                                onWordChange={this.handleWordChange}
+                            />
+                        <WordInput 
+                            index={19}
+                            key={19}
+                            onWordChange={this.handleWordChange}
+                        />
+                        <WordInput 
+                            index={20}
+                            key={20}
+                            onWordChange={this.handleWordChange}
+                        />
+                        <WordInput 
+                            index={21}
+                            key={21}
+                            onWordChange={this.handleWordChange}
+                        />
+                        <WordInput 
+                            index={22}
+                            key={22}
+                            onWordChange={this.handleWordChange}
+                        />
+                        <WordInput 
+                            index={23}
+                            key={23}
+                            onWordChange={this.handleWordChange}
+                        />
+                    </Col>
+                </Row>
+                }
             </form>
         );
     }

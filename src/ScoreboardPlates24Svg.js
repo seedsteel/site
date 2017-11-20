@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import SeedsteelScoreboard from './SeedsteelScoreboard';
 
-class ScoreboardPlatesSvg extends Component {
+class ScoreboardPlates24Svg extends Component {
 
     render() {
         return (
             <svg 
                 id="theletters"
-                height={"11in"} 
-                width={"8.5in"}
+                height={"8.5in"} 
+                width={"11in"}
                 xmlns="http://www.w3.org/2000/svg"
+                // transform="rotate(90) "
                 >
                 <SeedsteelScoreboard
                     x={0.25}
@@ -25,9 +26,23 @@ class ScoreboardPlatesSvg extends Component {
                     seedWords={this.props.seedWords}
                     subkey={1}
                     />
+                <SeedsteelScoreboard
+                    x={4.25}
+                    y={0.25}
+                    plateIndex={2}
+                    seedWords={this.props.seedWords}
+                    subkey={2}
+                    />
+                <SeedsteelScoreboard
+                    x={6.25}
+                    y={0.25}
+                    plateIndex={3}
+                    seedWords={this.props.seedWords}
+                    subkey={3}
+                    />
             </svg>
         );
     }
 }
 
-export default ScoreboardPlatesSvg;
+export default ScoreboardPlates24Svg;
