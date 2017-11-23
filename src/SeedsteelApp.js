@@ -9,13 +9,9 @@ class SeedsteelApp extends Component {
                 <Navbar>
                     <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="#">Seedsteel</a>
+                        <a href="#">Seedsteel Template Generator</a>
                     </Navbar.Brand>
                     </Navbar.Header>
-                    <Nav>
-                        <NavItem eventKey={1} href="#">Create 12 Word Plates</NavItem>
-                        <NavItem eventKey={1} href="#">Create 24 Word Plates</NavItem>
-                    </Nav>
                 </Navbar>
                 <SeedsteelTemplate />
             </div>
