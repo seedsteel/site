@@ -16,6 +16,7 @@ const gridLineStyle = {stroke: '#000000', fill: 'black', strokeWidth:0.21908905}
 const scoreboardLetterHoles = {
     " ": [],
     "a":[[1,0], [2,0], [3,0],
+         //[1.25,0], [2.75,0],
          [0,1], [4,1],
          [0,2], [4,2],
          [0,3], [1,3], [2,3], [3,3], [4,3],
