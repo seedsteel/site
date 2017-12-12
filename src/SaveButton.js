@@ -7,7 +7,7 @@ class SaveButton extends Component {
     
     saveit() {
         var svgContents = document.getElementById('theletters').outerHTML;
-        var filename = "test-save";
+        var filename = "seedsteel-template";
         var xmlPrefix = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>";
         var blob = new Blob([xmlPrefix + svgContents], {type: "image/svg+xml"});
         saveAs(blob, filename + ".svg");
