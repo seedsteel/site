@@ -34,7 +34,7 @@ class SeedsteelTemplate extends Component {
     getSvgTemplate() {
         switch(this.state.renderType) {
             case "scoreboard":
-                if (this.state.wordCount == 24) {
+                if (this.state.wordCount === 24) {
                     return <ScoreboardPlates24Svg
                                 seedWords={this.state.seedWords}
                                 />
@@ -43,7 +43,7 @@ class SeedsteelTemplate extends Component {
                             seedWords={this.state.seedWords}
                             />
             case "braille":
-                if (this.state.wordCount == 24) {
+                if (this.state.wordCount === 24) {
                     return <BraillePlates24Svg
                                 seedWords={this.state.seedWords}
                                 />

@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import BrailleWordRow, {wordRowHeight} from './BrailleWordRow';
 import SeedsteelPlate from './SeedsteelPlate';
 
-const rectHeight = 6;
-const rectWidth = 2;
-
 const firstWordRowHeightOffset = 0.75;
 
 const cornerCircleEdgeDistance = 0.25;

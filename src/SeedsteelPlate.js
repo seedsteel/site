@@ -51,7 +51,7 @@ class SeedsteelPlate extends Component {
                     r={cornerCircleRadius + "in"} 
                     style={outerEdgeStyle}
                     />
-                <line 
+                {/* <line 
                     x1={offsetX + 0.5 + "in"}
                     y1={offsetY + "in"}
                     x2={offsetX + 0.75 + "in"}
@@ -92,7 +92,7 @@ class SeedsteelPlate extends Component {
                     x2={offsetX + 0.25 + "in"}
                     y2={offsetY + 5.25 + "in"}
                     style={outerEdgeStyle}
-                    />
+                    /> */}
             </g>
         );
     }

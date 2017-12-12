@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ScoreboardWordRow, {wordRowHeight} from './ScoreboardWordRow';
+import ScoreboardLetterPair from './ScoreboardLetterPair';
 import SeedsteelPlate from './SeedsteelPlate';
 
 const rectHeight = 6;
@@ -18,6 +19,7 @@ class SeedsteelScoreboard extends Component {
         const offsetX = this.props.x;
         const offsetY = this.props.y;
         const keyPrefix = this.props.subkey;
+        const plateIndex = this.props.plateIndex;
 
         const word1Index = (this.props.plateIndex * 6) + 0;
         const word2Index = (this.props.plateIndex * 6) + 1;
@@ -32,6 +34,11 @@ class SeedsteelScoreboard extends Component {
         const word4 = this.props.seedWords[word4Index];
         const word5 = this.props.seedWords[word5Index];
         const word6 = this.props.seedWords[word6Index];
+
+        const plateIdFieldOffsetX = 0;
+        const plateIdFieldOffsetY = 0;
+        const idFieldChar1 = "0";
+        const idFieldChar2 = (plateIndex + 1).toString();
 
         return (
             <g>
@@ -75,6 +82,20 @@ class SeedsteelScoreboard extends Component {
                     y={offsetY + firstWordRowHeightOffset + (wordRowHeight * 5)}
                     word={word6}
                     subkey={keyPrefix + ":6"}
+                    />
+                <ScoreboardLetterPair
+                    x={offsetX + 0.5}
+                    y={offsetY}
+                    char1={" "}
+                    char2={" "}
+                    subkey={keyPrefix + ":up"}
+                    />
+                <ScoreboardLetterPair
+                    x={offsetX + 0.5}
+                    y={offsetY + firstWordRowHeightOffset + (wordRowHeight * 6)}
+                    char1={idFieldChar1}
+                    char2={idFieldChar2}
+                    subkey={keyPrefix + ":bp"}
                     />
             </g>
         );
